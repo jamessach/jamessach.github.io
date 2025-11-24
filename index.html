@@ -45,7 +45,7 @@ title: Home
 }
 
 .hero-title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: 0 0 0.5rem 0;
 }
 
@@ -135,7 +135,7 @@ title: Home
   margin: 0 0.3rem 0.3rem 0;
 }
 
-/* Lists shared */
+/* Generic item list */
 .item-list {
   list-style: none;
   padding-left: 0;
@@ -205,187 +205,176 @@ title: Home
 <div class="portfolio">
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Blog & Portfolio</div>
+    <div class="hero-eyebrow">Portfolio</div>
     <h1 class="hero-title">
-      Hi, I’m James. <span>I work in IT and security.</span>
+      James Sacharanski · <span>IT & Security</span>
     </h1>
 
     <p class="hero-subtitle">
-      I deal with endpoints, access, migrations, tickets, and all the small things that keep
-      systems running. On the side, I spend time in security labs and try to turn that into
-      something useful instead of just terminal screenshots.
+      I work across IT and security: managing endpoints, supporting users, handling access,
+      and improving how systems are set up and maintained. I’m interested in roles where
+      I can keep one foot in operations and one in security.
     </p>
 
     <div class="hero-meta">
-      <span>Information Technology Associate @ Investview Inc.</span>
-      <span>Cybersecurity M.S. Student · Rowan University</span>
-      <span>Based in South Jersey</span>
+      <span>Information Technology Associate · Investview Inc.</span>
+      <span>Cybersecurity M.S. · Rowan University</span>
+      <span>South Jersey, USA</span>
     </div>
 
     <div class="hero-actions">
-      <a href="/blog/" class="btn-primary">Blog</a>
-      <a href="#projects" class="btn-ghost">Labs & Projects</a>
+      <a href="#projects" class="btn-primary">View work</a>
+      <a href="#skills" class="btn-ghost">Skills</a>
       <a href="#contact" class="btn-ghost">Contact</a>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <h2 class="section-title">What I do</h2>
+    <h2 class="section-title">About</h2>
     <p class="section-subtitle">
-      A quick overview of my day job, what I practice in labs, and why this site exists.
+      What I actually do day to day, and what I practice outside of work.
     </p>
 
     <div class="grid-2">
       <div>
         <p>
-          Day to day, I work in IT and security. That covers endpoint management, user access,
-          onboarding, tickets, and supporting the systems people rely on without thinking about them.
+          In my current role, I manage endpoints, support staff, and help keep core services
+          running. That includes working with CrowdStrike Falcon, access and onboarding,
+          asset tracking, and email and identity changes.
         </p>
         <p>
-          Outside of work, I use lab environments to practice the parts of security that
-          don’t always come up on a normal workday: enumeration, exploitation, and privilege escalation.
-          It’s a good way to learn without wrecking anything important or stressing out coworkers.
-        </p>
-        <p>
-          This site is where I park notes, small writeups, and projects so they don’t just
-          vanish into random folders. It’s not meant to be perfect, just honest and useful.
+          Outside of work, I use controlled test environments to practice technical skills
+          like enumeration, exploitation, and privilege escalation. The goal is simple:
+          be more useful on a security-focused team, not just familiar with the terminology.
         </p>
       </div>
 
       <div class="card">
-        <strong>Currently working with</strong>
+        <strong>What I work with</strong>
         <div class="chip-row">
           <span class="chip">CrowdStrike Falcon</span>
-          <span class="chip">Endpoint security</span>
-          <span class="chip">Windows / Linux</span>
+          <span class="chip">Windows & Linux</span>
           <span class="chip">Jira Service Management</span>
           <span class="chip">Google Workspace / Microsoft 365</span>
+          <span class="chip">Endpoint & user support</span>
         </div>
 
-        <strong style="display:block; margin-top:0.9rem;">Currently focused on</strong>
+        <strong style="display:block; margin-top:0.9rem;">What I’m building towards</strong>
         <div class="chip-row">
-          <span class="chip">Privilege escalation labs</span>
-          <span class="chip">Vulnerability / access workflows</span>
-          <span class="chip">Reducing alert noise</span>
-          <span class="chip">Automation & small scripts</span>
+          <span class="chip">Security operations</span>
+          <span class="chip">Vulnerability / access management</span>
+          <span class="chip">Better documentation & workflows</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BLOG PREVIEW (home) -->
-  <section id="blog">
-    <h2 class="section-title">Blog</h2>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
     <p class="section-subtitle">
-      Longer notes and breakdowns of things I’m learning, breaking, or fixing.
-      (Full list lives at <a href="/blog/">/blog/</a>.)
+      Focused on the parts that matter to a security or IT manager.
     </p>
 
-    <ul class="item-list">
-      <li class="item">
-        <div class="item-title">Building a Reliable Enumeration Routine</div>
-        <div class="item-meta">Labs · Recon & mapping</div>
-        <p class="item-desc">
-          A practical look at how I approach new targets in labs: from network discovery and
-          service mapping to deciding which paths are worth chasing instead of just running
-          every tool I’ve ever heard of.
-        </p>
-        <!-- <a href="/blog/enumeration-routine.html">Read more →</a> -->
-      </li>
+    <div class="card">
+      <strong>Technical</strong>
+      <div class="chip-row">
+        <span class="chip">Endpoint security (CrowdStrike Falcon)</span>
+        <span class="chip">Policy & alert handling</span>
+        <span class="chip">Windows & Linux administration basics</span>
+        <span class="chip">Email / DNS: SPF, DKIM, DMARC</span>
+        <span class="chip">Identity & access basics</span>
+      </div>
 
-      <li class="item">
-        <div class="item-title">Making Endpoint Alerts Less Annoying</div>
-        <div class="item-meta">Ops · CrowdStrike Falcon</div>
-        <p class="item-desc">
-          Notes on tuning endpoint security in production: common false positives, simple
-          wins, and how documentation helps future you understand why something was changed.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Access Reviews Without Losing the Plot</div>
-        <div class="item-meta">Compliance · Access & PCI-adjacent work</div>
-        <p class="item-desc">
-          Thoughts from helping with access reviews: finding over-permissioned accounts,
-          dealing with legacy exceptions, and making decisions traceable instead of fuzzy.
-        </p>
-      </li>
-    </ul>
-
-    <p style="margin-top:0.8rem; font-size:0.9rem;">
-      When I start publishing real posts, they’ll show up on the <a href="/blog/">blog page</a>.
-    </p>
+      <strong style="display:block; margin-top:0.9rem;">Process & support</strong>
+      <div class="chip-row">
+        <span class="chip">Onboarding & offboarding workflows</span>
+        <span class="chip">Ticketing (Jira Service Management)</span>
+        <span class="chip">Asset lifecycle tracking</span>
+        <span class="chip">Procedures & documentation</span>
+        <span class="chip">Basic compliance support (PCI-related)</span>
+      </div>
+    </div>
   </section>
 
-  <!-- LABS & PROJECTS -->
+  <!-- PROJECTS / WORK -->
   <section id="projects">
-    <h2 class="section-title">Labs & projects</h2>
+    <h2 class="section-title">Work & projects</h2>
     <p class="section-subtitle">
-      A mix of lab work and real-world projects that shaped how I approach security and operations.
+      Concrete examples of where I’ve added value, both on the job and in practice environments.
     </p>
 
-    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.2rem;">Lab projects</h3>
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.2rem;">On-the-job work</h3>
     <ul class="item-list">
       <li class="item">
-        <div class="item-title">Privilege Escalation Practice</div>
-        <div class="item-meta">Personal · Windows & Linux labs</div>
+        <div class="item-title">Endpoint security tuning</div>
+        <div class="item-meta">Investview Inc. · CrowdStrike Falcon</div>
         <p class="item-desc">
-          Ongoing work in lab environments focused on finding and exploiting common privilege
-          escalation paths. I keep track of patterns that repeat across boxes instead of
-          treating each one like a totally new puzzle.
+          Helped configure and tune CrowdStrike Falcon: policy adjustments, host grouping,
+          and alert handling. Focused on reducing obvious noise while keeping useful
+          visibility so real issues are easier to spot and respond to.
         </p>
       </li>
 
       <li class="item">
-        <div class="item-title">First 30 Minutes Playbook</div>
-        <div class="item-meta">Personal · Methodology over guessing</div>
+        <div class="item-title">Service desk and onboarding workflows</div>
+        <div class="item-meta">Investview Inc. · Jira Service Management</div>
         <p class="item-desc">
-          A small checklist for new targets: network discovery, service enumeration, quick web
-          checks, default creds, and obvious misconfigurations. The goal is to make the starting
-          steps consistent instead of random.
+          Worked on onboarding and access-related workflows in Jira Service Management,
+          making it easier to track requests, approvals, and user setup from start to finish.
         </p>
       </li>
 
       <li class="item">
-        <div class="item-title">Signal vs Noise Experiments</div>
-        <div class="item-meta">Personal · Logs & alerting</div>
+        <div class="item-title">Mail and platform migration</div>
+        <div class="item-meta">Investview Inc. · Microsoft 365 → Google Workspace</div>
         <p class="item-desc">
-          Tests around what actually gets logged, how alerts are triggered, and how tuning
-          decisions change the volume and quality of security signals from endpoints.
+          Assisted with moving mail and related settings: DNS records, SPF/DKIM/DMARC,
+          routing, and user transition. Aimed to keep disruption low while improving
+          the underlying configuration.
+        </p>
+      </li>
+
+      <li class="item">
+        <div class="item-title">Access review and evidence support</div>
+        <div class="item-meta">ESD Inc. · PCI DSS 4.0 readiness</div>
+        <p class="item-desc">
+          Helped gather and organize information for access reviews and related
+          documentation. Focused on making it clear who had access to what and why,
+          so reviews and auditor questions were easier to handle.
+        </p>
+      </li>
+
+      <li class="item">
+        <div class="item-title">Application security testing (internship)</div>
+        <div class="item-meta">LS Technologies · Penetration Testing Intern</div>
+        <p class="item-desc">
+          Assisted with testing internal applications in controlled environments.
+          Documented findings clearly, including how they were found and what the
+          impact was, to support fixes by other teams.
         </p>
       </li>
     </ul>
 
-    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.8rem;">Work projects</h3>
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.8rem;">Practice work</h3>
     <ul class="item-list">
       <li class="item">
-        <div class="item-title">Endpoint Security Tuning in Production</div>
-        <div class="item-meta">Investview Inc. · CrowdStrike Falcon</div>
+        <div class="item-title">Privilege escalation practice</div>
+        <div class="item-meta">Personal · Windows & Linux test environments</div>
         <p class="item-desc">
-          Iterative tuning of endpoint security policies and host grouping so alerts are
-          more meaningful. Worked on separating obvious noise from events that actually
-          deserve time and follow-up.
+          Ongoing hands-on practice in controlled environments, focused on building
+          a better understanding of common privilege escalation paths and how they
+          appear on real systems.
         </p>
       </li>
 
       <li class="item">
-        <div class="item-title">Mail & Identity Migration</div>
-        <div class="item-meta">Investview Inc. · Microsoft 365 → Google Workspace</div>
+        <div class="item-title">Enumeration and first-pass approach</div>
+        <div class="item-meta">Personal · Methodology</div>
         <p class="item-desc">
-          Helped move mail and identity: DNS changes, SPF/DKIM/DMARC, routing, archiving,
-          and user cutover. Focused on keeping things working for users while cleaning
-          up underlying configuration.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Access Review & Documentation Support</div>
-        <div class="item-meta">ESD Inc. · PCI DSS 4.0 Readiness</div>
-        <p class="item-desc">
-          Assisted with access reviews, evidence collection, and written justifications.
-          Treated it as a project in making risk and access decisions easier to explain later,
-          not just ticking boxes.
+          Developing a consistent way to approach new systems: service discovery,
+          basic checks, and prioritizing next steps instead of guessing.
         </p>
       </li>
     </ul>
@@ -395,7 +384,7 @@ title: Home
   <section id="experience">
     <h2 class="section-title">Experience snapshot</h2>
     <p class="section-subtitle">
-      The short version of where I’ve been so far.
+      High-level view of where I’ve worked.
     </p>
 
     <div class="card">
@@ -411,7 +400,7 @@ title: Home
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <p class="section-subtitle">
-      For roles, collaboration, or questions about anything on here.
+      Open to roles in IT, security operations, or security-focused support.
     </p>
 
     <div class="card">
@@ -446,3 +435,4 @@ title: Home
     </div>
   </section>
 </div>
+
