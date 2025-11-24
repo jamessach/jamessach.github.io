@@ -1,886 +1,217 @@
-
 ---
 layout: default
 title: Home
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>James Sacharanski | Portfolio</title>
-
-    <style>
-        :root {
-            --bg: #05060a;
-            --bg-alt: #0b0d14;
-            --accent: #4f46e5;
-            --accent-soft: rgba(79, 70, 229, 0.08);
-            --text: #f9fafb;
-            --muted: #9ca3af;
-            --border: #1f2933;
-            --card-radius: 14px;
-            --max-width: 1060px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                sans-serif;
-            background: radial-gradient(circle at top, #111827 0, #020617 55%);
-            color: var(--text);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* Layout */
-
-        .page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            border-bottom: 1px solid var(--border);
-            background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(16px);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #4f46e5, #22c55e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .nav-name {
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .nav-tagline {
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            font-size: 14px;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            padding-bottom: 2px;
-            border-bottom: 1px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-            border-bottom-color: var(--accent);
-        }
-
-        .nav-cta {
-            font-size: 13px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.3);
-            color: var(--muted);
-        }
-
-        .nav-cta:hover {
-            border-color: var(--accent);
-            color: var(--text);
-            background: rgba(79, 70, 229, 0.12);
-        }
-
-        main {
-            flex: 1;
-        }
-
-        .section {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 32px 20px;
-        }
-
-        /* Hero */
-
-        .hero {
-            display: grid;
-            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
-            gap: 32px;
-            align-items: center;
-            padding-top: 40px;
-            padding-bottom: 20px;
-        }
-
-        .hero-eyebrow {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .hero-title {
-            font-size: clamp(30px, 3vw, 38px);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .hero-title span {
-            color: var(--accent);
-        }
-
-        .hero-subtitle {
-            font-size: 15px;
-            line-height: 1.6;
-            color: var(--muted);
-            max-width: 540px;
-            margin-bottom: 18px;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            font-size: 12px;
-            color: var(--muted);
-            margin-bottom: 22px;
-        }
-
-        .hero-meta span {
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.35);
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            padding: 9px 16px;
-            border-radius: 999px;
-            border: none;
-            font-size: 14px;
-            font-weight: 500;
-            background: linear-gradient(135deg, #4f46e5, #22c55e);
-            color: #f9fafb;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.95;
-        }
-
-        .btn-ghost {
-            padding: 9px 16px;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            font-size: 14px;
-            background: transparent;
-            color: #e5e7eb;
-            cursor: pointer;
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            background: rgba(15, 23, 42, 0.8);
-        }
-
-        .hero-card {
-            border-radius: 18px;
-            border: 1px solid rgba(148, 163, 184, 0.35);
-            background: radial-gradient(circle at top left, #111827, #020617);
-            padding: 18px 18px 16px;
-            box-shadow: 0 22px 45px rgba(15, 23, 42, 0.7);
-        }
-
-        .hero-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 14px;
-        }
-
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 11px;
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            color: var(--muted);
-        }
-
-        .pill-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
-            background: #22c55e;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            font-size: 12px;
-        }
-
-        .hero-stat {
-            border-radius: 12px;
-            border: 1px solid rgba(31, 41, 55, 0.9);
-            background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), #020617);
-            padding: 10px 11px;
-        }
-
-        .hero-stat-label {
-            font-size: 11px;
-            color: var(--muted);
-            margin-bottom: 2px;
-        }
-
-        .hero-stat-value {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .hero-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 9px;
-        }
-
-        .hero-tag {
-            font-size: 11px;
-            padding: 4px 8px;
-            border-radius: 999px;
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(31, 41, 55, 0.9);
-            color: var(--muted);
-        }
-
-        /* Section headings */
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 16px;
-            margin-bottom: 18px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .section-subtitle {
-            font-size: 13px;
-            color: var(--muted);
-        }
-
-        /* About */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
-            gap: 24px;
-        }
-
-        .about-text {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .about-card {
-            border-radius: var(--card-radius);
-            border: 1px solid rgba(148, 163, 184, 0.35);
-            background: rgba(15, 23, 42, 0.9);
-            padding: 16px 16px 14px;
-        }
-
-        .about-card-title {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .chip-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-            font-size: 12px;
-        }
-
-        .chip {
-            padding: 5px 9px;
-            border-radius: 999px;
-            background: rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(55, 65, 81, 0.9);
-        }
-
-        /* Projects */
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .project-card {
-            border-radius: var(--card-radius);
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            background: rgba(15, 23, 42, 0.92);
-            padding: 14px 14px 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .project-name {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .project-meta {
-            font-size: 11px;
-            color: var(--muted);
-        }
-
-        .project-desc {
-            font-size: 13px;
-            color: var(--muted);
-            flex: 1;
-        }
-
-        .project-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 4px;
-            font-size: 11px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .project-links a {
-            color: var(--muted);
-        }
-
-        .project-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Experience */
-
-        .timeline {
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
-            gap: 16px;
-        }
-
-        .timeline-item {
-            border-radius: var(--card-radius);
-            border: 1px solid rgba(55, 65, 81, 0.9);
-            background: rgba(15, 23, 42, 0.92);
-            padding: 12px 14px;
-            font-size: 13px;
-        }
-
-        .timeline-role {
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .timeline-org {
-            font-size: 12px;
-            color: var(--muted);
-            margin-bottom: 2px;
-        }
-
-        .timeline-meta {
-            font-size: 11px;
-            color: var(--muted);
-            margin-bottom: 6px;
-        }
-
-        .timeline-list {
-            margin: 0;
-            padding-left: 18px;
-            color: var(--muted);
-        }
-
-        .timeline-list li {
-            margin-bottom: 3px;
-        }
-
-        /* Contact */
-
-        .contact-inner {
-            border-radius: var(--card-radius);
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            background: rgba(15, 23, 42, 0.96);
-            padding: 18px 18px 14px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
-            gap: 22px;
-        }
-
-        .contact-text {
-            font-size: 14px;
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        .contact-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 13px;
-            color: var(--muted);
-        }
-
-        .contact-list li {
-            margin-bottom: 6px;
-        }
-
-        .contact-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-            margin-bottom: 4px;
-        }
-
-        .contact-value a {
-            color: var(--text);
-        }
-
-        .contact-value a:hover {
-            color: var(--accent);
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .footer-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 12px 20px 18px;
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        /* Responsive */
-
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .about-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .contact-inner {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .cards-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .timeline {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .nav-inner {
-                flex-wrap: wrap;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding-top: 28px;
-            }
-
-            .cards-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-    </style>
-</head>
-<body>
-<div class="page">
-    <!-- NAVBAR -->
-    <header>
-        <div class="nav-inner">
-            <div class="nav-left">
-                <div class="avatar">J</div>
-                <div>
-                    <div class="nav-name">James Sacharanski</div>
-                    <div class="nav-tagline">Security | Systems | Building things that work</div>
-                </div>
-            </div>
-
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <a href="#contact" class="nav-cta">Open to roles</a>
-        </div>
-    </header>
-
-    <main>
-        <!-- HERO -->
-        <section class="section hero" id="top">
-            <div>
-                <div class="hero-eyebrow">Portfolio</div>
-                <h1 class="hero-title">
-                    Security-minded IT & <span>aspiring pentester</span> focused on practical impact.
-                </h1>
-                <p class="hero-subtitle">
-                    I work at the intersection of IT operations, endpoint security, and hands-on labs. 
-                    I like breaking things in controlled environments so they fail less in production.
-                </p>
-
-                <div class="hero-meta">
-                    <span>Based in South Jersey</span>
-                    <span>Cybersecurity student</span>
-                    <span>Interested in SOC / vuln mgmt / appsec</span>
-                </div>
-
-                <div class="hero-actions">
-                    <a href="#projects">
-                        <button class="btn-primary">View selected projects</button>
-                    </a>
-                    <a href="#contact">
-                        <button class="btn-ghost">Contact</button>
-                    </a>
-                </div>
-            </div>
-
-            <aside class="hero-card" aria-label="Snapshot">
-                <div class="hero-card-header">
-                    <div class="pill">
-                        <span class="pill-dot"></span>
-                        <span>Actively learning & shipping</span>
-                    </div>
-                    <span style="font-size: 11px; color: var(--muted);">Last updated: 2025</span>
-                </div>
-
-                <div class="hero-grid">
-                    <div class="hero-stat">
-                        <div class="hero-stat-label">Current role</div>
-                        <div class="hero-stat-value">IT Associate</div>
-                        <div class="hero-stat-label">Investview Inc.</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-label">Focus areas</div>
-                        <div class="hero-tags">
-                            <span class="hero-tag">Endpoint security</span>
-                            <span class="hero-tag">Pentesting labs</span>
-                            <span class="hero-tag">Compliance</span>
-                        </div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-label">Security tools</div>
-                        <div class="hero-tags">
-                            <span class="hero-tag">CrowdStrike</span>
-                            <span class="hero-tag">Nmap</span>
-                            <span class="hero-tag">Burp Suite (CE)</span>
-                        </div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-label">Current goals</div>
-                        <div class="hero-tags">
-                            <span class="hero-tag">SOC / analyst roles</span>
-                            <span class="hero-tag">Cert prep</span>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </section>
-
-        <!-- ABOUT -->
-        <section class="section" id="about">
-            <div class="section-header">
-                <div class="section-title">About</div>
-                <div class="section-subtitle">
-                    A quick snapshot of what I actually do and care about.
-                </div>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I work in IT by day and study cybersecurity, with a focus on practical skills:
-                        network enumeration, privilege escalation, and real-world attack paths.
-                    </p>
-                    <p>
-                        In my current role, I manage endpoints, respond to alerts, and write SOPs so 
-                        processes are repeatable instead of improvised. On my own time, I work through
-                        labs, retired boxes, and writeups to build a solid foundation for security roles.
-                    </p>
-                    <p>
-                        I care about signal over buzzwords: clear logging, sane access control, and
-                        documentation that someone can actually follow at 3 a.m. during an incident.
-                    </p>
-                </div>
-
-                <div class="about-card">
-                    <div class="about-card-title">Core skills</div>
-                    <div class="chip-row">
-                        <span class="chip">Endpoint security (CrowdStrike)</span>
-                        <span class="chip">Windows & Linux administration basics</span>
-                        <span class="chip">Network & service enumeration</span>
-                        <span class="chip">SOPs & documentation</span>
-                        <span class="chip">Web app & infra fundamentals</span>
-                    </div>
-
-                    <div class="about-card-title" style="margin-top: 14px;">Currently learning</div>
-                    <div class="chip-row">
-                        <span class="chip">Privilege escalation (Win / Linux)</span>
-                        <span class="chip">Vulnerability management workflows</span>
-                        <span class="chip">Scripting for automation</span>
-                        <span class="chip">SOC-style analysis</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="section" id="projects">
-            <div class="section-header">
-                <div class="section-title">Selected projects</div>
-                <div class="section-subtitle">
-                    Labs and work that show how I think, not just what tools I can name.
-                </div>
-            </div>
-
-            <div class="cards-grid">
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-name">Internal endpoint security tuning</div>
-                    <div class="project-meta">Role: IT Associate · Stack: CrowdStrike, Windows</div>
-                    <p class="project-desc">
-                        Helped tune endpoint policies and triage alerts in a production environment.
-                        Wrote SOPs for common detection patterns and normalized how tickets were handled,
-                        so incidents stopped being one-off guesswork.
-                    </p>
-                    <div class="project-footer">
-                        <span>Impact: stronger coverage, less noise.</span>
-                        <div class="project-links">
-                            <!-- <a href="#" target="_blank" rel="noreferrer">Case notes</a> -->
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-name">Retired HTB / lab work</div>
-                    <div class="project-meta">Personal · Stack: Nmap, Linux, web tools</div>
-                    <p class="project-desc">
-                        Worked through enumeration and privilege escalation labs, focusing on building 
-                        a repeatable methodology: scan, map services, identify misconfigurations, and 
-                        document each step as if handing it to a teammate.
-                    </p>
-                    <div class="project-footer">
-                        <span>Focus: process, not guessing.</span>
-                        <div class="project-links">
-                            <!-- <a href="#" target="_blank" rel="noreferrer">Writeups</a> -->
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-name">PCI-related documentation</div>
-                    <div class="project-meta">Role: IT Associate · Stack: Word, Diagrams</div>
-                    <p class="project-desc">
-                        Drafted targeted risk analysis content, access review language, and
-                        device acknowledgment forms to support compliance efforts. Focused on
-                        making the docs short, accurate, and usable by non-technical staff.
-                    </p>
-                    <div class="project-footer">
-                        <span>Impact: clearer paper trail.</span>
-                        <div class="project-links">
-                            <!-- <a href="#" target="_blank" rel="noreferrer">Sample (sanitized)</a> -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section class="section" id="experience">
-            <div class="section-header">
-                <div class="section-title">Experience</div>
-                <div class="section-subtitle">
-                    Roles that shaped how I approach security and operations.
-                </div>
-            </div>
-
-            <div class="timeline">
-                <!-- Job 1 -->
-                <article class="timeline-item">
-                    <div class="timeline-role">Information Technology Associate</div>
-                    <div class="timeline-org">Investview Inc.</div>
-                    <div class="timeline-meta">2024 – Present · Remote / Hybrid</div>
-                    <ul class="timeline-list">
-                        <li>Manage and monitor endpoints with CrowdStrike Falcon.</li>
-                        <li>Support onboarding, device tracking, and access-related paperwork.</li>
-                        <li>Handle tickets for end users while keeping an eye on security impact.</li>
-                    </ul>
-                </article>
-
-                <!-- Job 2 -->
-                <article class="timeline-item">
-                    <div class="timeline-role">Cybersecurity / IT projects</div>
-                    <div class="timeline-org">Self-directed labs</div>
-                    <div class="timeline-meta">Ongoing</div>
-                    <ul class="timeline-list">
-                        <li>Work through pentesting material and CTF-style labs.</li>
-                        <li>Practice enumeration, exploitation, and escalation on safe targets.</li>
-                        <li>Document findings as if writing internal knowledge base articles.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section class="section" id="contact">
-            <div class="section-header">
-                <div class="section-title">Contact</div>
-                <div class="section-subtitle">
-                    For security, IT, or junior analyst roles, this actually reaches me.
-                </div>
-            </div>
-
-            <div class="contact-inner">
-                <div>
-                    <p class="contact-text">
-                        I’m open to roles where I can combine IT fundamentals with security work:
-                        SOC, endpoint security, vulnerability management, or junior analyst positions.
-                    </p>
-                    <p class="contact-text">
-                        If you have a role that values hands-on learning, clear documentation, and
-                        someone who actually cares about doing things correctly, I’d be interested.
-                    </p>
-                    <a href="mailto:youremail@example.com">
-                        <button class="btn-primary">Email me</button>
-                    </a>
-                </div>
-
-                <div>
-                    <ul class="contact-list">
-                        <li>
-                            <div class="contact-label">Email</div>
-                            <div class="contact-value">
-                                <a href="mailto:youremail@example.com">youremail@example.com</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-label">Location</div>
-                            <div class="contact-value">South Jersey, USA</div>
-                        </li>
-                        <li>
-                            <div class="contact-label">LinkedIn</div>
-                            <div class="contact-value">
-                                <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">
-                                    linkedin.com/in/your-handle
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-label">GitHub</div>
-                            <div class="contact-value">
-                                <a href="https://github.com/your-handle" target="_blank" rel="noreferrer">
-                                    github.com/your-handle
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <span>© <span id="year"></span> James Sacharanski</span>
-            <span>Built without a bloated framework.</span>
-        </div>
-    </footer>
-</div>
-
-<script>
-    // tiny JS just to keep the year right
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
-
+<style>
+/* Layout wrapper */
+.portfolio {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+/* Generic section spacing */
+.portfolio section {
+  margin-bottom: 2.5rem;
+}
+
+/* Section headings */
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: #8f8f8f;
+  margin-bottom: 1.2rem;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 2.5rem;
+  border: 1px solid #00ff00;
+  padding: 1.5rem;
+  background: #020b02;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7bff7b;
+  margin-bottom: 0.4rem;
+}
+
+.hero-title {
+  font-size: 1.7rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.hero-title span {
+  color: #00ff00;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: #bfbfbf;
+  margin-bottom: 0.8rem;
+}
+
+.hero-meta {
+  font-size: 0.8rem;
+  color: #9ad39a;
+  margin-bottom: 1rem;
+}
+
+.hero-meta span {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid #116611;
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero-actions a {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.btn-primary {
+  border: 1px solid #00ff00;
+  padding: 0.4rem 0.8rem;
+  background: #001400;
+  color: #00ff00;
+}
+
+.btn-primary:hover {
+  background: #002000;
+}
+
+.btn-ghost {
+  border: 1px solid #444;
+  padding: 0.4rem 0.8rem;
+  color: #eee;
+}
+
+.btn-ghost:hover {
+  border-color: #777;
+}
+
+/* Two-column areas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .grid-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Cards / lists */
+.card {
+  border: 1px solid #116611;
+  padding: 1rem;
+  background: #020b02;
+  font-size: 0.9rem;
+}
+
+.chip-row {
+  margin-top: 0.4rem;
+}
+
+.chip {
+  display: inline-block;
+  border: 1px solid #116611;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  margin: 0 0.3rem 0.3rem 0;
+}
+
+/* Projects */
+.project-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.project-item {
+  border: 1px solid #116611;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.8rem;
+  background: #020b02;
+}
+
+.project-title {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.project-meta {
+  font-size: 0.8rem;
+  color: #9ad39a;
+  margin-bottom: 0.4rem;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Experience timeline */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  border-left: 2px solid #00ff00;
+  padding-left: 0.8rem;
+  margin-bottom: 1.3rem;
+}
+
+.timeline-role {
+  font-weight: bold;
+}
+
+.timeline-org {
+  font-size: 0.85rem;
+  color: #9ad39a;
+}
+
+.timeline-meta {
+  font-size: 0.8rem;
+  color: #8f8f8f;
+  margin-bottom: 0.4rem;
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #8f8f8f;
+}
+
+.contact-value a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.contact-value a:hover {
+  text-decor
