@@ -102,7 +102,7 @@ title: Home
   border-color: #777;
 }
 
-/* Two-column areas */
+/* Two-column layout */
 .grid-2 {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
@@ -115,7 +115,7 @@ title: Home
   }
 }
 
-/* Cards / lists */
+/* Cards / chips */
 .card {
   border: 1px solid #116611;
   padding: 1rem;
@@ -223,22 +223,23 @@ title: Home
   <section class="hero" id="top">
     <div class="hero-eyebrow">Portfolio</div>
     <h1 class="hero-title">
-      James Sacharanski · <span>Security-minded IT & aspiring pentester</span>
+      James Sacharanski · <span>Security-focused IT & aspiring pentester</span>
     </h1>
     <p class="hero-subtitle">
-      I work at the intersection of IT operations, endpoint security, and hands-on labs.
-      I care less about buzzwords and more about clear processes, sane access control,
-      and systems that don’t fall apart under basic pressure.
+      Security-focused IT professional with hands-on experience in endpoint security,
+      penetration testing, and supporting enterprise systems. Strong at finding issues,
+      tightening workflows, and making security changes stick.
     </p>
 
     <div class="hero-meta">
       <span>South Jersey</span>
-      <span>Cybersecurity student</span>
-      <span>Interested in SOC / vuln mgmt / appsec</span>
+      <span>Information Technology Associate @ Investview Inc.</span>
+      <span>Cybersecurity M.S. student · Rowan University</span>
     </div>
 
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View projects</a>
+      <a href="#experience" class="btn-ghost">Experience</a>
       <a href="#contact" class="btn-ghost">Contact</a>
     </div>
   </section>
@@ -247,44 +248,43 @@ title: Home
   <section id="about">
     <h2 class="section-title">About</h2>
     <p class="section-subtitle">
-      A quick snapshot of what I actually do and how I think.
+      How I work and what I actually bring to a security or IT team.
     </p>
 
     <div class="grid-2">
       <div>
         <p>
-          I work in IT and study cybersecurity, focused on practical skills:
-          network / service enumeration, endpoint security, and privilege escalation
-          in controlled lab environments.
+          I work across IT operations and security: managing enterprise endpoints,
+          supporting users, and tightening how things are done so there’s less chaos.
         </p>
         <p>
-          In my current role I manage endpoints, respond to alerts, and write
-          documentation so processes are repeatable instead of improvised.
-          On my own time I work through labs and retired boxes, aiming for a
-          solid foundation for SOC, analyst, or vulnerability management roles.
+          At Investview, I manage CrowdStrike Falcon (policy configuration,
+          host groups, alert triage, visibility tuning) while handling provisioning,
+          asset inventory, and lifecycle tracking across hardware and software.
         </p>
         <p>
-          I care about signal over noise: meaningful logging, reasonable access,
-          and documentation that someone can actually follow at 3 a.m.
+          Outside of work, I focus on practical security skills through labs:
+          enumeration, privilege escalation, and structured documentation of findings.
         </p>
       </div>
 
       <div class="card">
         <strong>Core skills</strong>
         <div class="chip-row">
-          <span class="chip">Endpoint security (CrowdStrike)</span>
-          <span class="chip">Windows / Linux fundamentals</span>
-          <span class="chip">Network & service enumeration</span>
-          <span class="chip">SOPs & documentation</span>
-          <span class="chip">Basic web app / infra understanding</span>
+          <span class="chip">CrowdStrike Falcon (policy & triage)</span>
+          <span class="chip">Endpoint security & visibility tuning</span>
+          <span class="chip">Asset inventory & lifecycle tracking</span>
+          <span class="chip">Jira Service Management workflows</span>
+          <span class="chip">Google Workspace / M365 mail & DNS</span>
+          <span class="chip">SOPs, DR & business continuity docs</span>
         </div>
 
-        <strong style="display:block; margin-top:0.9rem;">Currently focused on</strong>
+        <strong style="display:block; margin-top:0.9rem;">Current focus</strong>
         <div class="chip-row">
-          <span class="chip">Privilege escalation (Win / Linux)</span>
-          <span class="chip">Vuln management workflows</span>
-          <span class="chip">Scripting & automation</span>
+          <span class="chip">Privilege escalation (Win & Linux)</span>
+          <span class="chip">Vulnerability management workflows</span>
           <span class="chip">SOC-style analysis</span>
+          <span class="chip">Automation & scripting</span>
         </div>
       </div>
     </div>
@@ -294,55 +294,63 @@ title: Home
   <section id="projects">
     <h2 class="section-title">Selected projects & work</h2>
     <p class="section-subtitle">
-      A few things that show how I actually approach problems, not just what tools I can name.
+      A few concrete examples of how I think and what I’ve actually shipped.
     </p>
 
     <ul class="project-list">
       <li class="project-item">
-        <div class="project-title">Internal endpoint security tuning</div>
+        <div class="project-title">Enterprise endpoint security & alert triage</div>
         <div class="project-meta">
-          Role: Information Technology Associate · Stack: CrowdStrike, Windows
+          Information Technology Associate · Investview Inc. · CrowdStrike Falcon
         </div>
         <p class="project-desc">
-          Helped tune endpoint policies and triage alerts in a live environment.
-          Wrote SOPs for common detection patterns and normalized how tickets
-          were handled so incidents stopped being one-off improvisations.
-        </p>
-        <p class="project-desc">
-          <strong>Impact:</strong> clearer handling of noisy alerts,
-          fewer repeats of the same questions, and more consistent security coverage.
+          Manage enterprise endpoint security using CrowdStrike Falcon: policy configuration,
+          host groups, alert triage, and tuning. Developed consistent triage workflows to filter
+          noise and surface real threats.
         </p>
       </li>
 
       <li class="project-item">
-        <div class="project-title">Retired HTB & lab work</div>
+        <div class="project-title">Jira Service Management onboarding</div>
         <div class="project-meta">
-          Personal · Stack: Nmap, Linux tooling, web testing basics
+          IT Associate · Jira Service Management
         </div>
         <p class="project-desc">
-          Built a repeatable methodology for boxes and labs: enumerate services,
-          map attack surface, test misconfigurations, and carefully document each
-          step instead of guessing until something works.
-        </p>
-        <p class="project-desc">
-          <strong>Focus:</strong> process and understanding over “lucky hits,” with
-          notes written as if a teammate had to reproduce everything from scratch.
+          Built the onboarding portal, approvals, and user-group logic in JSM.
+          Structured workflows so they actually reflect business processes.
         </p>
       </li>
 
       <li class="project-item">
-        <div class="project-title">PCI-related documentation & workflows</div>
+        <div class="project-title">Microsoft 365 → Google Workspace migration</div>
         <div class="project-meta">
-          Role: Information Technology Associate · Stack: docs, diagrams, device tracking
+          DNS · SPF/DKIM/DMARC · Routing
         </div>
         <p class="project-desc">
-          Drafted language and templates to support access reviews, targeted risk
-          analysis, and device acknowledgment / tracking workflows. Focused on
-          making them short, accurate, and usable by non-technical staff.
+          Led the migration including SPF/DKIM/DMARC, routing, domain verification,
+          archiving, and user transition.
         </p>
+      </li>
+
+      <li class="project-item">
+        <div class="project-title">PCI DSS 4.0 readiness</div>
+        <div class="project-meta">
+          Compliance Officer · ESD Inc.
+        </div>
         <p class="project-desc">
-          <strong>Impact:</strong> fewer gaps in the paper trail and less confusion
-          when someone actually needs to verify who has what and why.
+          Performed access reviews, documented risks, organized evidence, and prepared
+          materials for QSA review.
+        </p>
+      </li>
+
+      <li class="project-item">
+        <div class="project-title">Penetration Testing (FAA-related)</div>
+        <div class="project-meta">
+          Penetration Tester (Intern) · LS Technologies
+        </div>
+        <p class="project-desc">
+          Tested FAA-related internal applications, wrote findings with repro steps and
+          impact, and assisted senior engineers with lab configuration.
         </p>
       </li>
     </ul>
@@ -352,29 +360,35 @@ title: Home
   <section id="experience">
     <h2 class="section-title">Experience</h2>
     <p class="section-subtitle">
-      Roles and work that shaped how I approach security and operations.
+      Roles that shaped how I approach security, operations, and documentation.
     </p>
 
     <ul class="timeline">
       <li class="timeline-item">
         <div class="timeline-role">Information Technology Associate</div>
         <div class="timeline-org">Investview Inc.</div>
-        <div class="timeline-meta">2024 – Present · Remote / Hybrid</div>
+        <div class="timeline-meta">2025 – Present</div>
         <p>
-          Manage and monitor endpoints with CrowdStrike Falcon, support device
-          lifecycle and access-related paperwork, and handle user issues with
-          an eye on security implications instead of just “making it work”.
+          CrowdStrike Falcon administration (policy, triage, tuning), provisioning,
+          asset lifecycle, Google Workspace migration, and Jira Service Management automation.
         </p>
       </li>
 
       <li class="timeline-item">
-        <div class="timeline-role">Cybersecurity / IT projects (self-directed)</div>
-        <div class="timeline-org">Labs & training</div>
-        <div class="timeline-meta">Ongoing</div>
+        <div class="timeline-role">Compliance Officer (Contract)</div>
+        <div class="timeline-org">ESD Inc.</div>
+        <div class="timeline-meta">2024</div>
         <p>
-          Work through pentesting material, HTB-style labs, and structured
-          exercises. Practice enumeration, exploitation, and escalation on safe
-          targets while documenting findings as if writing an internal KB.
+          PCI DSS 4.0 evidence preparation, access reviews, and risk assessments.
+        </p>
+      </li>
+
+      <li class="timeline-item">
+        <div class="timeline-role">Penetration Tester (Intern)</div>
+        <div class="timeline-org">LS Technologies</div>
+        <div class="timeline-meta">2023</div>
+        <p>
+          Performed penetration testing on FAA-related systems and documented findings clearly.
         </p>
       </li>
     </ul>
@@ -384,39 +398,30 @@ title: Home
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <p class="section-subtitle">
-      For security, IT, or junior analyst roles that value hands-on learning and clear thinking.
+      For security, IT, or analyst roles where practical work and clear thinking matter.
     </p>
 
     <div class="card">
-      <p>
-        I’m interested in roles where I can combine IT fundamentals with security work:
-        SOC, endpoint security, vulnerability management, or junior analyst positions.
-      </p>
-      <p>
-        If you need someone who actually cares about doing things correctly, writing
-        things down, and improving the process over time, reach out.
-      </p>
-
       <ul class="contact-list">
         <li>
           <div class="contact-label">Email</div>
           <div class="contact-value">
-            <a href="mailto:youremail@example.com">youremail@example.com</a>
+            <a href="mailto:sacharanskij@gmail.com">sacharanskij@gmail.com</a>
           </div>
         </li>
         <li>
           <div class="contact-label">LinkedIn</div>
           <div class="contact-value">
-            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">
-              linkedin.com/in/your-handle
+            <a href="https://www.linkedin.com/in/james-sacharanski-6a8785272/" target="_blank">
+              linkedin.com/in/james-sacharanski-6a8785272
             </a>
           </div>
         </li>
         <li>
           <div class="contact-label">GitHub</div>
           <div class="contact-value">
-            <a href="https://github.com/your-handle" target="_blank" rel="noreferrer">
-              github.com/your-handle
+            <a href="https://github.com/YOURGITHUB" target="_blank">
+              github.com/YOURGITHUB
             </a>
           </div>
         </li>
@@ -428,3 +433,4 @@ title: Home
     </div>
   </section>
 </div>
+
