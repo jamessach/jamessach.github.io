@@ -135,7 +135,7 @@ title: Home
   margin: 0 0.3rem 0.3rem 0;
 }
 
-/* Lists */
+/* Lists shared */
 .item-list {
   list-style: none;
   padding-left: 0;
@@ -207,13 +207,13 @@ title: Home
   <section class="hero">
     <div class="hero-eyebrow">Blog & Portfolio</div>
     <h1 class="hero-title">
-      Hi, I’m James. <span>I break and harden systems for a living.</span>
+      Hi, I’m James. <span>I work in IT and security.</span>
     </h1>
 
     <p class="hero-subtitle">
-      I work in IT and security, spend too much time in labs, and try to turn
-      that into something useful: better defenses, clearer processes, and fewer
-      “why did no one write this down?” moments.
+      I deal with endpoints, access, migrations, tickets, and all the small things that keep
+      systems running. On the side, I spend time in security labs and try to turn that into
+      something useful instead of just terminal screenshots.
     </p>
 
     <div class="hero-meta">
@@ -223,132 +223,169 @@ title: Home
     </div>
 
     <div class="hero-actions">
-      <a href="#posts" class="btn-primary">Read notes & posts</a>
-      <a href="#projects" class="btn-ghost">View labs & projects</a>
-      <a href="#contact" class="btn-ghost">Get in touch</a>
+      <a href="/blog/" class="btn-primary">Blog</a>
+      <a href="#projects" class="btn-ghost">Labs & Projects</a>
+      <a href="#contact" class="btn-ghost">Contact</a>
     </div>
   </section>
 
-  <!-- ABOUT / WHAT THIS SITE IS -->
+  <!-- ABOUT -->
   <section id="about">
-    <h2 class="section-title">What this site is</h2>
+    <h2 class="section-title">What I do</h2>
     <p class="section-subtitle">
-      Part portfolio, part lab notebook, part place to dump things I don’t want to forget.
+      A quick overview of my day job, what I practice in labs, and why this site exists.
     </p>
 
     <div class="grid-2">
       <div>
         <p>
-          I work across IT operations and security: endpoint management, access,
-          onboarding, and the kind of glue work that keeps everything from
-          falling apart quietly in the background.
+          Day to day, I work in IT and security. That covers endpoint management, user access,
+          onboarding, tickets, and supporting the systems people rely on without thinking about them.
         </p>
         <p>
-          On the security side, I spend time in labs practicing enumeration,
-          exploitation, and privilege escalation in controlled environments.
-          The goal is to build instincts that carry over into real systems,
-          not just collect tool names.
+          Outside of work, I use lab environments to practice the parts of security that
+          don’t always come up on a normal workday: enumeration, exploitation, and privilege escalation.
+          It’s a good way to learn without wrecking anything important or stressing out coworkers.
         </p>
         <p>
-          This site is where I collect writeups, small projects, and notes from
-          that work. Some of it is polished, some of it is just “this worked, here’s why.”
+          This site is where I park notes, small writeups, and projects so they don’t just
+          vanish into random folders. It’s not meant to be perfect, just honest and useful.
         </p>
       </div>
 
       <div class="card">
-        <strong>What I’m working with</strong>
+        <strong>Currently working with</strong>
         <div class="chip-row">
           <span class="chip">CrowdStrike Falcon</span>
           <span class="chip">Endpoint security</span>
           <span class="chip">Windows / Linux</span>
           <span class="chip">Jira Service Management</span>
-          <span class="chip">Google Workspace / M365</span>
+          <span class="chip">Google Workspace / Microsoft 365</span>
         </div>
 
-        <strong style="display:block; margin-top:0.9rem;">What I’m focusing on</strong>
+        <strong style="display:block; margin-top:0.9rem;">Currently focused on</strong>
         <div class="chip-row">
           <span class="chip">Privilege escalation labs</span>
-          <span class="chip">Vulnerability management workflows</span>
-          <span class="chip">Log signal vs noise</span>
+          <span class="chip">Vulnerability / access workflows</span>
+          <span class="chip">Reducing alert noise</span>
           <span class="chip">Automation & small scripts</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NOTES / POSTS -->
-  <section id="posts">
-    <h2 class="section-title">Notes & posts</h2>
+  <!-- BLOG PREVIEW (home) -->
+  <section id="blog">
+    <h2 class="section-title">Blog</h2>
     <p class="section-subtitle">
-      Short writeups, lab notes, and half-rants about things I’m learning or breaking.
+      Longer notes and breakdowns of things I’m learning, breaking, or fixing.
+      (Full list lives at <a href="/blog/">/blog/</a>.)
     </p>
 
     <ul class="item-list">
-      <!-- These are placeholders; point them at real posts when you create them -->
       <li class="item">
-        <div class="item-title">Building a repeatable enumeration flow</div>
-        <div class="item-meta">Lab notes · Network & service discovery</div>
+        <div class="item-title">Building a Reliable Enumeration Routine</div>
+        <div class="item-meta">Labs · Recon & mapping</div>
         <p class="item-desc">
-          How I go from “open ports” to a structured map of services, versions,
-          and likely attack paths, without just throwing tools at the problem.
+          A practical look at how I approach new targets in labs: from network discovery and
+          service mapping to deciding which paths are worth chasing instead of just running
+          every tool I’ve ever heard of.
         </p>
-        <!-- <a href="/posts/enumeration-flow.html">Read more →</a> -->
+        <!-- <a href="/blog/enumeration-routine.html">Read more →</a> -->
       </li>
 
       <li class="item">
-        <div class="item-title">Keeping endpoint alerts useful instead of noisy</div>
-        <div class="item-meta">Ops & security · CrowdStrike Falcon</div>
+        <div class="item-title">Making Endpoint Alerts Less Annoying</div>
+        <div class="item-meta">Ops · CrowdStrike Falcon</div>
         <p class="item-desc">
-          Thoughts on alert triage, false positives, and documenting patterns so
-          the next person doesn’t start from zero every time.
+          Notes on tuning endpoint security in production: common false positives, simple
+          wins, and how documentation helps future you understand why something was changed.
         </p>
       </li>
 
       <li class="item">
-        <div class="item-title">Doing compliance work without losing your mind</div>
-        <div class="item-meta">Process · PCI-ish sanity</div>
+        <div class="item-title">Access Reviews Without Losing the Plot</div>
+        <div class="item-meta">Compliance · Access & PCI-adjacent work</div>
         <p class="item-desc">
-          Notes from helping with PCI DSS readiness and access reviews:
-          what actually helped, what was just noise, and how to make the
-          paperwork hurt less.
+          Thoughts from helping with access reviews: finding over-permissioned accounts,
+          dealing with legacy exceptions, and making decisions traceable instead of fuzzy.
         </p>
       </li>
     </ul>
+
+    <p style="margin-top:0.8rem; font-size:0.9rem;">
+      When I start publishing real posts, they’ll show up on the <a href="/blog/">blog page</a>.
+    </p>
   </section>
 
-  <!-- LABS / PROJECTS -->
+  <!-- LABS & PROJECTS -->
   <section id="projects">
     <h2 class="section-title">Labs & projects</h2>
     <p class="section-subtitle">
-      A few things that are more “work in progress” than “perfect case study.”
+      A mix of lab work and real-world projects that shaped how I approach security and operations.
     </p>
 
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.2rem;">Lab projects</h3>
     <ul class="item-list">
       <li class="item">
-        <div class="item-title">Enterprise endpoint security tuning</div>
+        <div class="item-title">Privilege Escalation Practice</div>
+        <div class="item-meta">Personal · Windows & Linux labs</div>
+        <p class="item-desc">
+          Ongoing work in lab environments focused on finding and exploiting common privilege
+          escalation paths. I keep track of patterns that repeat across boxes instead of
+          treating each one like a totally new puzzle.
+        </p>
+      </li>
+
+      <li class="item">
+        <div class="item-title">First 30 Minutes Playbook</div>
+        <div class="item-meta">Personal · Methodology over guessing</div>
+        <p class="item-desc">
+          A small checklist for new targets: network discovery, service enumeration, quick web
+          checks, default creds, and obvious misconfigurations. The goal is to make the starting
+          steps consistent instead of random.
+        </p>
+      </li>
+
+      <li class="item">
+        <div class="item-title">Signal vs Noise Experiments</div>
+        <div class="item-meta">Personal · Logs & alerting</div>
+        <p class="item-desc">
+          Tests around what actually gets logged, how alerts are triggered, and how tuning
+          decisions change the volume and quality of security signals from endpoints.
+        </p>
+      </li>
+    </ul>
+
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.8rem;">Work projects</h3>
+    <ul class="item-list">
+      <li class="item">
+        <div class="item-title">Endpoint Security Tuning in Production</div>
         <div class="item-meta">Investview Inc. · CrowdStrike Falcon</div>
         <p class="item-desc">
-          Tuning policies, improving host grouping, and building simple triage workflows
-          so Falcon alerts are actually usable instead of overwhelming.
+          Iterative tuning of endpoint security policies and host grouping so alerts are
+          more meaningful. Worked on separating obvious noise from events that actually
+          deserve time and follow-up.
         </p>
       </li>
 
       <li class="item">
-        <div class="item-title">Structured pentesting labs</div>
-        <div class="item-meta">Personal · Lab environments</div>
-        <p class="item-desc">
-          Working through exploitation and privilege escalation labs with an emphasis on
-          note-taking, repeatability, and understanding why something worked instead of
-          just copying payloads.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Mail & identity migration</div>
+        <div class="item-title">Mail & Identity Migration</div>
         <div class="item-meta">Investview Inc. · Microsoft 365 → Google Workspace</div>
         <p class="item-desc">
-          DNS and mail migration work: SPF/DKIM/DMARC, routing, archiving, and user cutover,
-          with a focus on minimizing chaos for everyone else.
+          Helped move mail and identity: DNS changes, SPF/DKIM/DMARC, routing, archiving,
+          and user cutover. Focused on keeping things working for users while cleaning
+          up underlying configuration.
+        </p>
+      </li>
+
+      <li class="item">
+        <div class="item-title">Access Review & Documentation Support</div>
+        <div class="item-meta">ESD Inc. · PCI DSS 4.0 Readiness</div>
+        <p class="item-desc">
+          Assisted with access reviews, evidence collection, and written justifications.
+          Treated it as a project in making risk and access decisions easier to explain later,
+          not just ticking boxes.
         </p>
       </li>
     </ul>
@@ -358,7 +395,7 @@ title: Home
   <section id="experience">
     <h2 class="section-title">Experience snapshot</h2>
     <p class="section-subtitle">
-      If you care about titles and timelines.
+      The short version of where I’ve been so far.
     </p>
 
     <div class="card">
@@ -374,7 +411,7 @@ title: Home
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <p class="section-subtitle">
-      For security, IT, or analyst roles — or if you just want to talk about breaking things safely.
+      For roles, collaboration, or questions about anything on here.
     </p>
 
     <div class="card">
