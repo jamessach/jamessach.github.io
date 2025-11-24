@@ -1,438 +1,48 @@
----
-layout: default
-title: Home
----
+<section id="about">
+  <h2 class="section-title">About</h2>
+  <p class="section-subtitle">
+    What I do and where I’m heading.
+  </p>
 
-<style>
-/* Layout wrapper */
-.portfolio {
-  max-width: 960px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
-}
+  <div class="grid-2">
+    <div>
+      <p>
+        I work in IT and security, focusing on endpoint management, user support, access, 
+        and the day-to-day operations that keep systems stable. I use tools like CrowdStrike 
+        Falcon, Jira Service Management, Google Workspace, and Microsoft 365 to support users 
+        and maintain a clean operational baseline.
+      </p>
 
-/* Generic section spacing */
-.portfolio section {
-  margin-bottom: 2.5rem;
-}
+      <p>
+        Outside my job, I use controlled test environments to build practical technical 
+        skills—mainly system enumeration, misconfiguration analysis, and privilege 
+        escalation. These environments help me understand how systems behave under real 
+        conditions and give me a stronger foundation for security work.
+      </p>
 
-/* Section headings */
-.section-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.4rem;
-}
-
-.section-subtitle {
-  font-size: 0.9rem;
-  color: #8f8f8f;
-  margin-bottom: 1.2rem;
-}
-
-/* Hero */
-.hero {
-  margin-bottom: 2.5rem;
-  border: 1px solid #00ff00;
-  padding: 1.5rem;
-  background: #020b02;
-}
-
-.hero-eyebrow {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #7bff7b;
-  margin-bottom: 0.4rem;
-}
-
-.hero-title {
-  font-size: 1.9rem;
-  margin: 0 0 0.5rem 0;
-}
-
-.hero-title span {
-  color: #00ff00;
-}
-
-.hero-subtitle {
-  font-size: 0.95rem;
-  color: #bfbfbf;
-  margin-bottom: 0.8rem;
-}
-
-.hero-meta {
-  font-size: 0.8rem;
-  color: #9ad39a;
-  margin-bottom: 1rem;
-}
-
-.hero-meta span {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  border: 1px solid #116611;
-  margin-right: 0.35rem;
-  margin-bottom: 0.35rem;
-}
-
-.hero-actions a {
-  display: inline-block;
-  font-size: 0.85rem;
-  text-decoration: none;
-  margin-right: 0.5rem;
-  margin-bottom: 0.4rem;
-}
-
-.btn-primary {
-  border: 1px solid #00ff00;
-  padding: 0.4rem 0.8rem;
-  background: #001400;
-  color: #00ff00;
-}
-
-.btn-primary:hover {
-  background: #002000;
-}
-
-.btn-ghost {
-  border: 1px solid #444;
-  padding: 0.4rem 0.8rem;
-  color: #eee;
-}
-
-.btn-ghost:hover {
-  border-color: #777;
-}
-
-/* Two-column layout */
-.grid-2 {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 800px) {
-  .grid-2 {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* Cards / chips */
-.card {
-  border: 1px solid #116611;
-  padding: 1rem;
-  background: #020b02;
-  font-size: 0.9rem;
-}
-
-.chip-row {
-  margin-top: 0.4rem;
-}
-
-.chip {
-  display: inline-block;
-  border: 1px solid #116611;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-  margin: 0 0.3rem 0.3rem 0;
-}
-
-/* Generic item list */
-.item-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.item {
-  border: 1px solid #116611;
-  padding: 0.9rem 1rem;
-  margin-bottom: 0.8rem;
-  background: #020b02;
-}
-
-.item-title {
-  font-weight: bold;
-  margin-bottom: 0.2rem;
-}
-
-.item-meta {
-  font-size: 0.8rem;
-  color: #9ad39a;
-  margin-bottom: 0.4rem;
-}
-
-.item-desc {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
-/* Experience snapshot */
-.snapshot-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.snapshot-list li {
-  margin-bottom: 0.4rem;
-}
-
-/* Contact */
-.contact-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.contact-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #8f8f8f;
-}
-
-.contact-value a {
-  color: #00ff00;
-  text-decoration: none;
-}
-
-.contact-value a:hover {
-  text-decoration: underline;
-}
-</style>
-
-<div class="portfolio">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow">Portfolio</div>
-    <h1 class="hero-title">
-      James Sacharanski · <span>IT & Security</span>
-    </h1>
-
-    <p class="hero-subtitle">
-      I work across IT and security: managing endpoints, supporting users, handling access,
-      and improving how systems are set up and maintained. I’m interested in roles where
-      I can keep one foot in operations and one in security.
-    </p>
-
-    <div class="hero-meta">
-      <span>Information Technology Associate · Investview Inc.</span>
-      <span>Cybersecurity M.S. · Rowan University</span>
-      <span>South Jersey, USA</span>
+      <p>
+        I’m currently one semester away from completing my M.S. in Cybersecurity at Rowan 
+        University. I’m interested in roles that mix IT operations, security monitoring, and 
+        hands-on analysis, where I can apply what I’ve learned while continuing to grow.
+      </p>
     </div>
-
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View work</a>
-      <a href="#skills" class="btn-ghost">Skills</a>
-      <a href="#contact" class="btn-ghost">Contact</a>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 class="section-title">About</h2>
-    <p class="section-subtitle">
-      What I actually do day to day, and what I practice outside of work.
-    </p>
-
-    <div class="grid-2">
-      <div>
-        <p>
-          In my current role, I manage endpoints, support staff, and help keep core services
-          running. That includes working with CrowdStrike Falcon, access and onboarding,
-          asset tracking, and email and identity changes.
-        </p>
-        <p>
-          Outside of work, I use controlled test environments to practice technical skills
-          like enumeration, exploitation, and privilege escalation. The goal is simple:
-          be more useful on a security-focused team, not just familiar with the terminology.
-        </p>
-      </div>
-
-      <div class="card">
-        <strong>What I work with</strong>
-        <div class="chip-row">
-          <span class="chip">CrowdStrike Falcon</span>
-          <span class="chip">Windows & Linux</span>
-          <span class="chip">Jira Service Management</span>
-          <span class="chip">Google Workspace / Microsoft 365</span>
-          <span class="chip">Endpoint & user support</span>
-        </div>
-
-        <strong style="display:block; margin-top:0.9rem;">What I’m building towards</strong>
-        <div class="chip-row">
-          <span class="chip">Security operations</span>
-          <span class="chip">Vulnerability / access management</span>
-          <span class="chip">Better documentation & workflows</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <p class="section-subtitle">
-      Focused on the parts that matter to a security or IT manager.
-    </p>
 
     <div class="card">
-      <strong>Technical</strong>
+      <strong>Technical Focus</strong>
       <div class="chip-row">
-        <span class="chip">Endpoint security (CrowdStrike Falcon)</span>
-        <span class="chip">Policy & alert handling</span>
-        <span class="chip">Windows & Linux administration basics</span>
-        <span class="chip">Email / DNS: SPF, DKIM, DMARC</span>
-        <span class="chip">Identity & access basics</span>
+        <span class="chip">Endpoint Security (CrowdStrike Falcon)</span>
+        <span class="chip">Windows & Linux Systems</span>
+        <span class="chip">Identity & Access</span>
+        <span class="chip">Email & DNS Configuration</span>
       </div>
 
-      <strong style="display:block; margin-top:0.9rem;">Process & support</strong>
+      <strong style="display:block; margin-top:0.9rem;">Building Toward</strong>
       <div class="chip-row">
-        <span class="chip">Onboarding & offboarding workflows</span>
-        <span class="chip">Ticketing (Jira Service Management)</span>
-        <span class="chip">Asset lifecycle tracking</span>
-        <span class="chip">Procedures & documentation</span>
-        <span class="chip">Basic compliance support (PCI-related)</span>
+        <span class="chip">Security Operations</span>
+        <span class="chip">Vulnerability & Access Management</span>
+        <span class="chip">System Hardening</span>
+        <span class="chip">Documentation & Process Improvement</span>
       </div>
     </div>
-  </section>
-
-  <!-- PROJECTS / WORK -->
-  <section id="projects">
-    <h2 class="section-title">Work & projects</h2>
-    <p class="section-subtitle">
-      Concrete examples of where I’ve added value, both on the job and in practice environments.
-    </p>
-
-    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.2rem;">On-the-job work</h3>
-    <ul class="item-list">
-      <li class="item">
-        <div class="item-title">Endpoint security tuning</div>
-        <div class="item-meta">Investview Inc. · CrowdStrike Falcon</div>
-        <p class="item-desc">
-          Helped configure and tune CrowdStrike Falcon: policy adjustments, host grouping,
-          and alert handling. Focused on reducing obvious noise while keeping useful
-          visibility so real issues are easier to spot and respond to.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Service desk and onboarding workflows</div>
-        <div class="item-meta">Investview Inc. · Jira Service Management</div>
-        <p class="item-desc">
-          Worked on onboarding and access-related workflows in Jira Service Management,
-          making it easier to track requests, approvals, and user setup from start to finish.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Mail and platform migration</div>
-        <div class="item-meta">Investview Inc. · Microsoft 365 → Google Workspace</div>
-        <p class="item-desc">
-          Assisted with moving mail and related settings: DNS records, SPF/DKIM/DMARC,
-          routing, and user transition. Aimed to keep disruption low while improving
-          the underlying configuration.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Access review and evidence support</div>
-        <div class="item-meta">ESD Inc. · PCI DSS 4.0 readiness</div>
-        <p class="item-desc">
-          Helped gather and organize information for access reviews and related
-          documentation. Focused on making it clear who had access to what and why,
-          so reviews and auditor questions were easier to handle.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Application security testing (internship)</div>
-        <div class="item-meta">LS Technologies · Penetration Testing Intern</div>
-        <p class="item-desc">
-          Assisted with testing internal applications in controlled environments.
-          Documented findings clearly, including how they were found and what the
-          impact was, to support fixes by other teams.
-        </p>
-      </li>
-    </ul>
-
-    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.8rem;">Practice work</h3>
-    <ul class="item-list">
-      <li class="item">
-        <div class="item-title">Privilege escalation practice</div>
-        <div class="item-meta">Personal · Windows & Linux test environments</div>
-        <p class="item-desc">
-          Ongoing hands-on practice in controlled environments, focused on building
-          a better understanding of common privilege escalation paths and how they
-          appear on real systems.
-        </p>
-      </li>
-
-      <li class="item">
-        <div class="item-title">Enumeration and first-pass approach</div>
-        <div class="item-meta">Personal · Methodology</div>
-        <p class="item-desc">
-          Developing a consistent way to approach new systems: service discovery,
-          basic checks, and prioritizing next steps instead of guessing.
-        </p>
-      </li>
-    </ul>
-  </section>
-
-  <!-- EXPERIENCE SNAPSHOT -->
-  <section id="experience">
-    <h2 class="section-title">Experience snapshot</h2>
-    <p class="section-subtitle">
-      High-level view of where I’ve worked.
-    </p>
-
-    <div class="card">
-      <ul class="snapshot-list">
-        <li><strong>Information Technology Associate</strong> · Investview Inc. (2025 – Present)</li>
-        <li><strong>Compliance Officer (Contract)</strong> · ESD Inc. (2024)</li>
-        <li><strong>Penetration Tester (Intern)</strong> · LS Technologies (2023)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-subtitle">
-      Open to roles in IT, security operations, or security-focused support.
-    </p>
-
-    <div class="card">
-      <ul class="contact-list">
-        <li>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">
-            <a href="mailto:sacharanskij@gmail.com">sacharanskij@gmail.com</a>
-          </div>
-        </li>
-        <li>
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">
-            <a href="https://www.linkedin.com/in/james-sacharanski-6a8785272/" target="_blank">
-              linkedin.com/in/james-sacharanski-6a8785272
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">
-            <a href="https://github.com/YOURGITHUB" target="_blank">
-              github.com/YOURGITHUB
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="contact-label">Location</div>
-          <div class="contact-value">South Jersey, USA</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-</div>
-
+  </div>
+</section>
